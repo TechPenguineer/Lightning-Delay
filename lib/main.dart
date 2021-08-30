@@ -35,16 +35,19 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            
             ElevatedButton(
               onPressed: (){},
               child: Icon(Icons.menu),
               style: ButtonStyle(
                  shape: MaterialStateProperty.all(CircleBorder()),
                  padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-                 backgroundColor: MaterialStateProperty.all(Colors.blue), // <-- Button color
+                 backgroundColor: MaterialStateProperty.all(Colors.white), // <-- Button color
                  overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
-                    if (states.contains(MaterialState.pressed)) return Colors.red; 
+                    if (states.contains(MaterialState.pressed)) return Colors.grey; 
                  }
                  )
               )
