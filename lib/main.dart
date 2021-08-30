@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Lightning Delay',
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        scaffoldBackgroundColor: const Color(0x1a1a1a1a),
       ),
       home: const MyHomePage(title: 'Lightning Delay'),
     );
@@ -30,6 +30,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  static const BTN_COLOUR = Color(0xFF071729);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,19 +39,18 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            
             ElevatedButton(
-              onPressed: (){},
-              child: Icon(Icons.menu),
+              onPressed: () {},
               style: ButtonStyle(
-                 shape: MaterialStateProperty.all(CircleBorder()),
-                 padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-                 backgroundColor: MaterialStateProperty.all(Colors.white), // <-- Button color
-                 overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
-                    if (states.contains(MaterialState.pressed)) return Colors.grey; 
-                 }
-                 )
-              )
+                  backgroundColor: MaterialStateProperty.all(BTN_COLOUR),
+                  padding: MaterialStateProperty.all(EdgeInsets.all(20))),
+              child: Text(
+                "Manual Mode",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white),
+              ),
             )
           ],
         ),
