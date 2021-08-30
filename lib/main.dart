@@ -42,10 +42,24 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
+                
                   backgroundColor: MaterialStateProperty.all(BTN_COLOUR),
                   padding: MaterialStateProperty.all(EdgeInsets.all(20))),
               child: Text(
                 "Manual Mode",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(BTN_COLOUR),
+                  padding: MaterialStateProperty.all(EdgeInsets.all(20))),
+              child: Text(
+                "Auto Mode",
                 style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.w300,
