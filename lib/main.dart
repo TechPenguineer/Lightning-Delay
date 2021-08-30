@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/physics.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,22 +30,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-          
+            ElevatedButton(
+              onPressed: (){},
+              child: Icon(Icons.menu),
+              style: ButtonStyle(
+                 shape: MaterialStateProperty.all(CircleBorder()),
+                 padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                 backgroundColor: MaterialStateProperty.all(Colors.blue), // <-- Button color
+                 overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
+                    if (states.contains(MaterialState.pressed)) return Colors.red; 
+                 }
+                 )
+              )
+            )
           ],
         ),
       ),
